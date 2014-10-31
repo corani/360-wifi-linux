@@ -15,4 +15,19 @@ Setting up [360 Mobile WIFI] (http://wifi.360.cn/) on Linux
 
 (3) This script does *not* work for the second version of the 360 wifi
 
+Installing the patched kernel driver
+====================================
 
+> sudo apt-get install --reinstall linux-headers-generic build-essential
+> cd DPO_MT7601U_LinuxSTA_3.0.0.4_20130913
+> make  
+> su -c 'mkdir -p /etc/Wireless/RT2870STA/'  
+> su -c 'cp RT2870STA.dat /etc/Wireless/RT2870STA/RT2870STA.dat'  
+
+Connect the USB
+
+> su -c '/sbin/insmod os/linux/mt7601Usta.ko'
+
+If works:
+
+> su -c 'make install'
